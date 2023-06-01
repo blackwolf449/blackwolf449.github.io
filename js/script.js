@@ -1,5 +1,6 @@
 const btnHome = document.querySelector('.home')
 const btnAbout = document.querySelector('.about')
+const btnProjects = document.querySelector('.projects')
 
 function centralizeScroll(contentElement) {
     let elementRect = contentElement.getBoundingClientRect()
@@ -19,4 +20,8 @@ btnHome.onclick = () => {
 
 btnAbout.onclick = () => {
     centralizeScroll(document.querySelector('#about-me'))
+}
+
+btnProjects.onclick = () => {
+    centralizeScroll(document.querySelector('#projects'))
 }

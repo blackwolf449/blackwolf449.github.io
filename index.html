@@ -7,6 +7,14 @@
         <title>Portifolio</title>
         <link rel="stylesheet" href="./css/style.css" />
         <script src="./js/script.js" defer></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
     </head>
     <body>
         <header>
@@ -20,9 +28,6 @@
                     <button class="nav-button home">Home</button>
                     <button class="nav-button about">About me</button>
                     <button class="nav-button projects">Projects</button>
-                    <button class="nav-button frameworks">
-                        Technologies and Frameworks
-                    </button>
                 </div>
             </nav>
         </header>
@@ -45,14 +50,28 @@
                     technical course of TI...
                 </p>
             </div>
-            <div class="box box-animated">
+            <div class="box box-animated" id="projects">
                 <div class="title-box">
                     <h1>Projects</h1>
                 </div>
+                <div class="box-container">
+                    <div>
+                        <ion-icon name="logo-nodejs"></ion-icon>
+                    </div>
+                </div>
             </div>
-            <div class="box box-animated">
+            <div class="box box-animated" id="technologies">
                 <div class="title-box">
-                    <h1>Technologies and frameworks</h1>
+                    <h1>technologies and frameworks</h1>
+                </div>
+                <div class="box-container">
+                    <h1>Front-end</h1>
+                    <div>
+                        <div>
+                            <h3>JS (JavaScript)</h3>
+                            <ion-icon name="logo-nodejs"></ion-icon>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
