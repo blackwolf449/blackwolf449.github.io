@@ -1,0 +1,8 @@
+:root{
+    --font-main: 'Red Hat Display', sans-serif;
+    --font-secondary: 'Bebas Neue', sans-serif;
+    --default-shadow-color: rgba(0, 0, 0, 0.3);
+    --large-border-radius: 15px;
+    --medium-border-radius: 10px;
+    --small-border-radius: 5px;
+}

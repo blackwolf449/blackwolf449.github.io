@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Red+Hat+Display:wght@400;700&display=swap');
+@import url('variables.css');
+@import url('animations.css');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-main);
+}
+html {
+    scroll-behavior: smooth;
+}
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 5px 50px 5px var(--default-shadow-color);
+    border-radius: var(--medium-border-radius);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+}
+nav > div {
+    display: flex;
+    align-items: start;
+    gap: 30px;
+}
+nav > div > a {
+    text-decoration: none;
+    color: black;
+}
+.nav-button {
+    font-family: var(--font-secondary);
+    border: 0;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 5px 5px 0px var(--default-shadow-color);
+    border-radius: var(--large-border-radius);
+    cursor: pointer;
+    transition: 500ms;
+}
+.nav-button:hover {
+    box-shadow: 5px 5px 30px var(--default-shadow-color);
+}
+.container {
+    padding: 40px;
+    gap: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: var(--medium-border-radius);
+}
+
+.box-first {
+    margin-top: 12vh;
+}
+.box {
+    box-shadow: -5px 5px 10px 10px var(--default-shadow-color);
+    border-radius: var(--medium-border-radius);
+    padding: 30px;
+    max-width: 40vw;
+}
+.box > .hi {
+    font-weight: bold;
+    font-size: 3rem;
+}
+.box > p {
+    font-size: 2rem;
+}
+.box-animated {
+    transition: 500ms;
+}
+.box-animated:hover {
+    margin-left: 40px;
+    cursor: pointer;
+    box-shadow: -15px 5px 10px 10px var(--default-shadow-color);
+}
+.box > .title-box {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border-bottom: 1px solid var(--default-shadow-color);
+    margin-bottom: 20px;
+}
