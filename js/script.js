@@ -38,13 +38,13 @@ function createSkills(skills, elementToInsertClass) {
             skillElements += `
             <div class="skills last-skill">
                 <h3>${skills[i].name}</h3>
-                <img width="70vw" src="${skills[i].svg}"/>
+                <img width="70vw" type="image/svg+xml" src="${skills[i].svg}"/>
             </div>`
         } else {
             skillElements += `
                 <div class="skills">
                     <h3>${skills[i].name}</h3>
-                    <img width="70vw" src="${skills[i].svg}"/>
+                    <img width="70vw" type="image/svg+xml" src="${skills[i].svg}"/>
                 </div>`
         }
     }
@@ -87,6 +87,7 @@ function createProjects(projects, elementToInsertClass) {
                         href="${projects[i].github}"
                         ><img
                             width="50vw"
+                            type: "image/svg+xml"
                             src="../assets/github.svg"
                             alt=""
                     /></a>
@@ -109,6 +110,7 @@ function createProjects(projects, elementToInsertClass) {
                         href="${projects[i].github}"
                         ><img
                             width="50vw"
+                            type="image/svg+xml"
                             src="../assets/github.svg"
                             alt=""
                     /></a>
