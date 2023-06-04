@@ -76,17 +76,79 @@ function createProjects(projects, elementToInsertClass) {
     for (let i = 0; i < projects.length; i++) {
         if (i + 1 == projects.length) {
             projectElements += `
-            <div class="skills last-skill">
-                <h3>${projects[i].name}</h3>
-                <img width="70vw" src="${projects[i].svg}"/>
+            <div class="project last-project">
+            <h1>${projects[i].name}</h1>
+            <iframe
+                src="${projects[i].link}"
+                frameborder="0"
+            ></iframe>
+                <div>
+                    <a
+                        href="${projects[i].github}"
+                        ><img
+                            width="50vw"
+                            src="../assets/github.svg"
+                            alt=""
+                    /></a>
+                    <div>
+                        <h3>Technologies:</h3>
+                        <p>${projects[i].techs.join(', ')}</p>
+                    </div>
+                </div>
             </div>`
         } else {
             projectElements += `
-                <div class="skills">
-                    <h3>${projects[i].name}</h3>
-                    <img width="70vw" src="${projects[i].svg}"/>
-                </div>`
+            <div class="project">
+            <h1>${projects[i].name}</h1>
+            <iframe
+                src="${projects[i].link}"
+                frameborder="0"
+            ></iframe>
+                <div>
+                    <a
+                        href="${projects[i].github}"
+                        ><img
+                            width="50vw"
+                            src="../assets/github.svg"
+                            alt=""
+                    /></a>
+                    <div>
+                        <h3>Technologies:</h3>
+                        <p>${projects[i].techs.join(', ')}</p>
+                    </div>
+                </div>
+            </div>`
         }
     }
     document.querySelector(elementToInsertClass).innerHTML = projectElements
 }
+
+createProjects(
+    [
+        {
+            name: 'Social Time',
+            link: 'https://socialtime.netlify.app',
+            github: 'https://github.com/blackwolf449/rede_social_front',
+            techs: ['JS', 'VueJS', 'NodeJS', 'Express'],
+        },
+        {
+            name: 'Code Editor',
+            link: 'https://bw449-code-editor.netlify.app',
+            github: 'https://github.com/blackwolf449/code-editor-angular',
+            techs: ['TS', 'Angular'],
+        },
+        {
+            name: 'T-Rex',
+            link: 'https://blackwolf449.github.io/T-Rex',
+            github: 'https://github.com/blackwolf449/T-Rex',
+            techs: ['JS'],
+        },
+        {
+            name: 'Pokedex',
+            link: 'https://blackwolf449.github.io/PokeDex_JS',
+            github: 'https://github.com/blackwolf449/PokeDex_JS',
+            techs: ['JS'],
+        },
+    ],
+    '.proj'
+)

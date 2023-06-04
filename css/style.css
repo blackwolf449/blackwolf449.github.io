@@ -64,11 +64,12 @@ nav > div > a {
 }
 .project {
     width: 36vw !important;
+    margin-bottom: 50px !important;
 }
 .project > iframe {
     margin: 0 auto;
     width: 35vw;
-    height: 20vw;
+    height: 30vw;
 }
 .project > div {
     display: flex;
@@ -84,7 +85,8 @@ nav > div > a {
     justify-content: center;
     gap: 10px;
 }
-.last-skill {
+.last-skill,
+.last-project {
     margin-bottom: 0 !important;
     border: 0 !important;
 }
