@@ -55,16 +55,38 @@ nav > div > a {
     flex-direction: column;
     border-radius: var(--medium-border-radius);
 }
-.skills {
+.skills,
+.project {
     border-bottom: 1px solid gray;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 30px;
 }
+.project {
+    width: 36vw !important;
+}
+.project > iframe {
+    margin: 0 auto;
+    width: 35vw;
+    height: 20vw;
+}
+.project > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.project > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 .last-skill {
     margin-bottom: 0 !important;
     border: 0 !important;
-    margin-bottom: 0 !important;
 }
 .box-first {
     margin-top: 12vh;
@@ -110,11 +132,4 @@ nav > div > a {
     padding: 20px 0;
     border: 1px solid var(--default-shadow-color);
     border-radius: var(--medium-border-radius);
-}
-.box-container > div > div > ion-icon {
-    font-size: 100px;
-}
-.box-container > div > ion-icon {
-    font-size: 100px;
-    z-index: -100;
 }

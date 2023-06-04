@@ -66,6 +66,27 @@ createSkills(
         { name: 'Express', svg: '../assets/express.svg' },
         { name: 'Python', svg: '../assets/python.svg' },
         { name: 'Postgres', svg: '../assets/postgres.svg' },
+        { name: 'MongoDB', svg: '../assets/mongodb.svg' },
     ],
     '.skill-back'
 )
+
+function createProjects(projects, elementToInsertClass) {
+    let projectElements = ``
+    for (let i = 0; i < projects.length; i++) {
+        if (i + 1 == projects.length) {
+            projectElements += `
+            <div class="skills last-skill">
+                <h3>${projects[i].name}</h3>
+                <img width="70vw" src="${projects[i].svg}"/>
+            </div>`
+        } else {
+            projectElements += `
+                <div class="skills">
+                    <h3>${projects[i].name}</h3>
+                    <img width="70vw" src="${projects[i].svg}"/>
+                </div>`
+        }
+    }
+    document.querySelector(elementToInsertClass).innerHTML = projectElements
+}
