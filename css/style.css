@@ -20,6 +20,7 @@ nav {
     align-items: center;
     gap: 15px;
     background-color: white;
+    z-index: 99;
 }
 nav > div {
     display: flex;
@@ -54,7 +55,17 @@ nav > div > a {
     flex-direction: column;
     border-radius: var(--medium-border-radius);
 }
-
+.skills {
+    border-bottom: 1px solid gray;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.last-skill {
+    margin-bottom: 0 !important;
+    border: 0 !important;
+    margin-bottom: 0 !important;
+}
 .box-first {
     margin-top: 12vh;
 }
@@ -105,4 +116,5 @@ nav > div > a {
 }
 .box-container > div > ion-icon {
     font-size: 100px;
+    z-index: -100;
 }
