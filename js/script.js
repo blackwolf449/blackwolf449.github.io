@@ -65,10 +65,16 @@ createSkills(
         { name: 'NodeJS', svg: './assets/node.svg' },
         { name: 'Express', svg: './assets/express.svg' },
         { name: 'Python', svg: './assets/python.svg' },
+    ],
+    '.skill-back'
+)
+createSkills(
+    [
+        { name: 'Mysql', svg: './assets/mysql.svg' },
         { name: 'Postgres', svg: './assets/postgres.svg' },
         { name: 'MongoDB', svg: './assets/mongodb.svg' },
     ],
-    '.skill-back'
+    '.skill-data'
 )
 
 function createProjects(projects, elementToInsertClass) {
