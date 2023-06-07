@@ -2,6 +2,8 @@ const btnHome = document.querySelector('.home')
 const btnAbout = document.querySelector('.about')
 const btnProjects = document.querySelector('.projects')
 const btnTech = document.querySelector('.technologies')
+const btnDropdown = document.querySelector('.dropdown')
+const nav = document.querySelector('nav')
 
 function centralizeScroll(contentElement) {
     let elementRect = contentElement.getBoundingClientRect()
@@ -13,6 +15,16 @@ function centralizeScroll(contentElement) {
         top: scrollPosition - 180,
         behavior: 'smooth',
     })
+    if (nav.classList.contains('nav-show')) dropdown()
+}
+
+function dropdown() {
+    if (nav.classList.contains('nav-show')) {
+        btnDropdown.classList.remove('dropdown-rotate')
+        return nav.classList.remove('nav-show')
+    }
+    btnDropdown.classList.add('dropdown-rotate')
+    nav.classList.add('nav-show')
 }
 
 btnHome.onclick = () => {
@@ -158,3 +170,7 @@ createProjects(
     ],
     '.proj'
 )
+
+btnDropdown.onclick = () => {
+    dropdown()
+}
