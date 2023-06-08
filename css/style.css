@@ -143,6 +143,32 @@ nav > div > a {
     border: 1px solid var(--default-shadow-color);
     border-radius: var(--medium-border-radius);
 }
+ul {
+    list-style: none;
+}
+li > a > img,
+li > a > div > img {
+    width: 50px;
+}
+li > a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+}
+li {
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: var(--medium-border-radius);
+    padding: 5px;
+    transition: 500ms;
+}
+li:hover {
+    padding: 15px;
+    box-shadow: 5px 5px 30px var(--default-shadow-color);
+}
 
 @media only screen and (max-width: 935px) {
     nav {
