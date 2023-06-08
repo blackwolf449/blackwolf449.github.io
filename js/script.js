@@ -2,6 +2,7 @@ const btnHome = document.querySelector('.home')
 const btnAbout = document.querySelector('.about')
 const btnProjects = document.querySelector('.projects')
 const btnTech = document.querySelector('.technologies')
+const btnContact = document.querySelector('.contact')
 const btnDropdown = document.querySelector('.dropdown')
 const nav = document.querySelector('nav')
 
@@ -41,6 +42,10 @@ btnProjects.onclick = () => {
 
 btnTech.onclick = () => {
     centralizeScroll(document.querySelector('#technologies'))
+}
+
+btnContact.onclick = () => {
+    centralizeScroll(document.querySelector('#contact'))
 }
 
 function createSkills(skills, elementToInsertClass) {
