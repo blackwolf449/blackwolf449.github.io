@@ -47,106 +47,38 @@ btnTech.onclick = () => {
 btnContact.onclick = () => {
     centralizeScroll(document.querySelector('#contact'))
 }
-
-function createSkills(skills, elementToInsertClass) {
-    let skillElements = ``
-    for (let i = 0; i < skills.length; i++) {
-        if (i + 1 == skills.length) {
-            skillElements += `
-            <div class="skills last-skill">
-                <h3>${skills[i].name}</h3>
-                <img width="70vw" src="${skills[i].svg}"/>
-            </div>`
-        } else {
-            skillElements += `
-                <div class="skills">
-                    <h3>${skills[i].name}</h3>
-                    <img width="70vw" src="${skills[i].svg}"/>
-                </div>`
-        }
-    }
-    document.querySelector(elementToInsertClass).innerHTML = skillElements
-}
-createSkills(
-    [
-        { name: 'HTML', svg: './assets/html.svg' },
-        { name: 'CSS', svg: './assets/css.svg' },
-        { name: 'JavaScript (JS)', svg: './assets/js.svg' },
-        { name: 'VueJS', svg: './assets/vue.svg' },
-        { name: 'Flutter', svg: './assets/flutter.svg' },
-    ],
-    '.skill-front'
-)
-createSkills(
-    [
-        { name: 'NodeJS', svg: './assets/node.svg' },
-        { name: 'Express', svg: './assets/express.svg' },
-        { name: 'Python', svg: './assets/python.svg' },
-    ],
-    '.skill-back'
-)
-createSkills(
-    [
-        { name: 'Mysql', svg: './assets/mysql.svg' },
-        { name: 'Postgres', svg: './assets/postgres.svg' },
-        { name: 'MongoDB', svg: './assets/mongodb.svg' },
-    ],
-    '.skill-data'
-)
-
-function createProjects(projects, elementToInsertClass) {
-    let projectElements = ``
-    for (let i = 0; i < projects.length; i++) {
-        if (i + 1 == projects.length) {
-            projectElements += `
-            <div class="project last-project">
-            <h1>${projects[i].name}</h1>
-            <iframe
-                src="${projects[i].link}"
-                frameborder="0"
-            ></iframe>
-                <div>
-                    <a
-                        href="${projects[i].github}"
-                        ><img
-                            width="50vw"
-                            src="../assets/github.svg"
-                            alt=""
-                    /></a>
-                    <div>
-                        <h3>Technologies:</h3>
-                        <p>${projects[i].techs.join(', ')}</p>
-                    </div>
-                </div>
-            </div>`
-        } else {
-            projectElements += `
-            <div class="project">
-            <h1>${projects[i].name}</h1>
-            <iframe
-                src="${projects[i].link}"
-                frameborder="0"
-            ></iframe>
-                <div>
-                    <a
-                        href="${projects[i].github}"
-                        ><img
-                            width="50vw"
-                            src="../assets/github.svg"
-                            alt=""
-                    /></a>
-                    <div>
-                        <h3>Technologies:</h3>
-                        <p>${projects[i].techs.join(', ')}</p>
-                    </div>
-                </div>
-            </div>`
-        }
-    }
-    document.querySelector(elementToInsertClass).innerHTML = projectElements
+btnDropdown.onclick = () => {
+    dropdown()
 }
 
-createProjects(
+function createElements(
+    elementsList,
+    keywords,
+    elementToInsertClass,
+    htmlElement
+) {
+    let contactsElement = ``
+    for (let j = 0; j < elementsList.length; j++) {
+        let element = htmlElement
+        for (let i = 0; i < keywords.length; i++) {
+            if (Array.isArray(elementsList[j][keywords[i]])) {
+                element = element.replace(
+                    keywords[i],
+                    elementsList[j][keywords[i]].join(', ')
+                )
+            } else {
+                element = element.replace(
+                    keywords[i],
+                    elementsList[j][keywords[i]]
+                )
+            }
+        }
+        contactsElement += element
+    }
+    document.querySelector(elementToInsertClass).innerHTML = contactsElement
+}
+
+createElements(
     [
         {
             name: 'Social Time',
@@ -173,9 +105,103 @@ createProjects(
             techs: ['JS'],
         },
     ],
-    '.proj'
+    ['name', 'link', 'githubImage', 'techs'],
+    '.proj',
+    `
+<div class="project">
+<h1>name</h1>
+<iframe
+    src="link"
+    frameborder="0"
+></iframe>
+    <div>
+        <a
+            href="githubImage"
+            ><img
+                width="50vw"
+                src="../assets/github.svg"
+                alt=""
+        /></a>
+        <div>
+            <h3>Technologies:</h3>
+            <p>techs</p>
+        </div>
+    </div>
+</div>`
 )
 
-btnDropdown.onclick = () => {
-    dropdown()
-}
+createElements(
+    [
+        { link: '', svg: './assets/instagram.svg', name: '@vini_nequiz01' },
+        { link: '', svg: './assets/facebook.svg', name: 'Vini Nequiz' },
+        {
+            link: '',
+            svg: './assets/linkedin.svg',
+            name: 'Vinicius Oliveira<br> de Deus Nequiz',
+        },
+        { link: '', svg: './assets/gmail.svg', name: 'Tacvini@gmail.com' },
+        {
+            link: '',
+            svg: './assets/outlook.svg',
+            name: 'viniciusnequiz@outlook.com',
+        },
+        {
+            link: '',
+            svg: './assets/brazil.svg',
+            name: '+55 (19) 984326-8049',
+        },
+        { link: '', svg: './assets/australia.svg', name: 'Undefined' },
+    ],
+    ['link', 'svg', 'name'],
+    'ul',
+    `
+    <li>
+        <a href="link"
+        ><img src="svg" />
+        name</a>
+    </li>`
+)
+
+createElements(
+    [
+        { name: 'HTML', svg: './assets/html.svg' },
+        { name: 'CSS', svg: './assets/css.svg' },
+        { name: 'JavaScript (JS)', svg: './assets/js.svg' },
+        { name: 'VueJS', svg: './assets/vue.svg' },
+        { name: 'Flutter', svg: './assets/flutter.svg' },
+    ],
+    ['name', 'svg'],
+    '.skill-front',
+    `<div class="skills">
+    <h3>name</h3>
+    <img width="70vw" src="svg"/>
+    </div>`
+)
+
+createElements(
+    [
+        { name: 'NodeJS', svg: './assets/node.svg' },
+        { name: 'Express', svg: './assets/express.svg' },
+        { name: 'Python', svg: './assets/python.svg' },
+    ],
+    ['name', 'svg'],
+    '.skill-back',
+    `<div class="skills">
+    <h3>name</h3>
+    <img width="70vw" src="svg"/>
+    </div>`
+)
+
+createElements(
+    [
+        { name: 'Mysql', svg: './assets/mysql.svg' },
+        { name: 'Postgres', svg: './assets/postgres.svg' },
+        { name: 'MongoDB', svg: './assets/mongodb.svg' },
+    ],
+    ['name', 'svg'],
+    '.skill-data',
+    `<div class="skills">
+    <h3>name</h3>
+    <img width="70vw" src="svg"/>
+    </div>`
+)

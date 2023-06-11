@@ -93,8 +93,8 @@ nav > div > a {
     justify-content: center;
     gap: 10px;
 }
-.last-skill,
-.last-project {
+.skills:last-child,
+.project:last-child {
     margin-bottom: 0 !important;
     border: 0 !important;
 }
@@ -162,11 +162,11 @@ li {
     margin-bottom: 10px;
     border: 1px solid gray;
     border-radius: var(--medium-border-radius);
-    padding: 5px;
+    padding: 10px;
     transition: 500ms;
 }
 li:hover {
-    padding: 15px;
+    padding: 20px;
     box-shadow: 5px 5px 30px var(--default-shadow-color);
 }
 
