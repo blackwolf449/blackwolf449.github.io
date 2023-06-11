@@ -103,7 +103,6 @@ nav > div > a {
     margin-top: 12vh;
 }
 .box {
-    animation: initialize 1s ease-out infinite;
     box-shadow: -5px 5px 10px 10px var(--default-shadow-color);
     border-radius: var(--medium-border-radius);
     padding: 30px;
